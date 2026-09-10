@@ -1,0 +1,39 @@
+# The verification ladder for this domain.
+#
+# The engine knows the shape — which rungs apply, over which repositories, in
+# what order, and what counts as evidence. It knows nothing about your build
+# system. Every command below is a string this pack wrote.
+#
+# Rungs come from the `gate_level` toggle. To insert one, extend that toggle in
+# toggles.yaml with `overrides: true` rather than touching the engine.
+#
+# Per gate:
+#   from_level   the rung at which it starts running (omitted: static)
+#   per_repo     a command run in each repository in the change
+#   once         a command run once, at the workspace root
+#   only_repos   restrict it to named repositories
+#   when         a condition over other toggles
+#   subagent     a hint that the output is large and belongs in a subagent
+#
+# Variables: ${repo.<field>} ${toggle.<id>} ${workspace.<dotted>} ${target.<field>}
+# An unresolved variable blocks the gate rather than running a broken command.
+
+version: 1
+
+# Entries go under the key below, indented as the example is. Uncomment it and
+# edit, or delete it and write your own.
+gates:
+
+# Example — delete once you have your own:
+#
+#   - id: static
+#     title: Lint
+#     from_level: static
+#     per_repo: "${repo.lint}"
+#     timeout: 300
+#
+#   - id: build
+#     title: Build
+#     from_level: build
+#     per_repo: "make ${repo.build_target}"
+#     subagent: true

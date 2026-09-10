@@ -1,0 +1,23 @@
+# The one thing this pack places that is not a directory.
+#
+# `rules/`, `skills/` and `agents/` are walked and copied as they are; a
+# `_workspaces/<name>/<scope>/` layer lands once at the workspace root, and a
+# `_repos/<name>/` pack lands in that repository and no sibling. Copying is the
+# mechanism, not a last resort: the collection is versioned somewhere else, so a
+# working directory carries a copy and `deck save` carries the edits back.
+#
+# Everything placed is recorded in a manifest and removed on unmount. deck never
+# deletes what it did not place, and never deletes what somebody edited.
+
+# The plugin id Claude Code should enable in a working directory.
+# plugin: sample@MARKETPLACE
+
+# Where that plugin comes from, if it is not already known on the machine.
+# marketplace:
+#   name: MARKETPLACE
+#   source: { source: url, url: "https://example.com/packs.git" }
+
+# Nothing about rules here. Whatever sits in this pack's `rules/`, `skills/` and
+# `agents/` is placed, and a directory that had to agree with a list in this file
+# was two statements of one fact — with one of them going stale the first time
+# somebody added a rule and forgot the entry.

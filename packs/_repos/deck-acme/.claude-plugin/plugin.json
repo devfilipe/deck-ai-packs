@@ -1,0 +1,9 @@
+{
+  "name": "deck-acme",
+  "description": "Acme's knowledge, kept outside the example repository",
+  "version": "0.1.0",
+  "keywords": [
+    "deck",
+    "pack"
+  ]
+}

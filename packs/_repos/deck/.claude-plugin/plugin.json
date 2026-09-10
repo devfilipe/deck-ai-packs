@@ -1,0 +1,9 @@
+{
+  "name": "deck",
+  "description": "deck's own knowledge, kept outside the engine",
+  "version": "0.1.0",
+  "keywords": [
+    "deck",
+    "pack"
+  ]
+}
